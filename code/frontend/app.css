@@ -22,3 +22,20 @@ body {
     .intro span {
       color: #2bb8b8;
     }
+    .nav-links a {
+      color: black;
+      text-decoration: none;
+      margin-right: 20px;
+      font-weight: normal;
+      font-size: 1rem;
+      display: inline-block;
+      margin-right: 15px;
+      color: black;
+      text-decoration: none;
+    }
+    
+    .nav-links a:hover {
+      color: #00332e;
+      text-decoration: underline;
+    }
+    
