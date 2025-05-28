@@ -2,10 +2,10 @@
 session_start();
 require __DIR__ . '/db.php';
 
-if (!isset($_SESSION['user_id'])) {
+$userId = $_SESSION['user_id'] ?? null;
+if (!$userId) {
     die('Bitte einloggen.');
 }
-$userId = $_SESSION['user_id'];
 
 $stmt = $pdo->prepare("SELECT id, name FROM folders WHERE user_id = ?");
 $stmt->execute([$userId]);
@@ -13,39 +13,24 @@ $folders = $stmt->fetchAll();
 ?>
 <!DOCTYPE html>
 <html lang="de">
-<head>
-  <meta charset="UTF-8">
-  <title>Datei hochladen – Learnify</title>
-</head>
+<head><meta charset="UTF-8"><title>Upload</title></head>
 <body>
   <h1>Datei hochladen</h1>
   <?php if (isset($_GET['success'])): ?>
     <p style="color:green;">Upload erfolgreich!</p>
   <?php endif; ?>
   <form action="handle_upload.php" method="post" enctype="multipart/form-data">
-    <label for="file">Datei auswählen:</label><br>
-    <input type="file" name="file" id="file" required><br><br>
-
-    <label for="subject">Subject:</label><br>
-    <input type="text" name="subject" id="subject" maxlength="100"><br><br>
-
-    <label for="description">Beschreibung:</label><br>
-    <textarea name="description" id="description" rows="4"></textarea><br><br>
-
-    <label for="folder">Ordner:</label><br>
-    <select name="folder_id" id="folder">
-      <option value="">-- Hauptbereich --</option>
+    <label for="file">Datei:</label><input type="file" name="file" id="file" required><br>
+    <label for="subject">Subject:</label><input type="text" name="subject" id="subject"><br>
+    <label for="description">Beschreibung:</label><textarea name="description" id="description"></textarea><br>
+    <label for="folder">Ordner:</label><select name="folder_id" id="folder">
+      <option value="">-- Root --</option>
       <?php foreach ($folders as $f): ?>
-        <option value="<?= htmlspecialchars($f['id']) ?>"><?= htmlspecialchars($f['name']) ?></option>
+        <option value="<?php echo $f['id']; ?>"><?php echo htmlspecialchars($f['name']); ?></option>
       <?php endforeach; ?>
-    </select><br><br>
-
-    <label>Sichtbarkeit:</label><br>
-    <input type="radio" id="public" name="is_public" value="1">
-    <label for="public">Öffentlich</label><br>
-    <input type="radio" id="private" name="is_public" value="0" checked>
-    <label for="private">Privat</label><br><br>
-
+    </select><br>
+    <label>Sichtbar für alle?<input type="radio" name="is_public" value="1"></label>
+    <label>Nur privat<input type="radio" name="is_public" value="0" checked></label><br>
     <button type="submit">Hochladen</button>
   </form>
 </body>

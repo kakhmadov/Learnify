@@ -10,11 +10,16 @@ $dsn = sprintf(
 );
 
 try {
-    $pdo = new PDO($dsn, $dbCfg['user'], $dbCfg['password'], [
-        PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
-        PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
-        PDO::ATTR_EMULATE_PREPARES   => false,
-    ]);
+    $pdo = new PDO(
+        $dsn,
+        $dbCfg['user'],
+        $dbCfg['password'],
+        [
+            PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
+            PDO::ATTR_DEFAULT_FETCH_MODE => PDO::FETCH_ASSOC,
+            PDO::ATTR_EMULATE_PREPARES   => false,
+        ]
+    );
 } catch (PDOException $e) {
-    die('Datenbank-Verbindungsfehler: ' . $e->getMessage());
+    die('DB Connection Error: ' . $e->getMessage());
 }
