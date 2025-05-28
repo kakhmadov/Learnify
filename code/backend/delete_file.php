@@ -7,7 +7,7 @@ $userId = $_SESSION['user_id'] ?? null;
 
 $stmt = $pdo->prepare("SELECT filename FROM files WHERE id = ? AND user_id = ?");
 $stmt->execute([$id, $userId]);
-f    = $stmt->fetch();
+$f = $stmt->fetch();
 
 if ($f) {
     unlink(__DIR__ . '/uploads/' . $userId . '/' . $f['filename']);

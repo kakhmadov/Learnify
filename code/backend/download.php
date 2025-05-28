@@ -7,7 +7,7 @@ $userId = $_SESSION['user_id'] ?? null;
 
 $stmt = $pdo->prepare("SELECT filename, user_id FROM files WHERE id = ?");
 $stmt->execute([$id]);
-f    = $stmt->fetch();
+$f    = $stmt->fetch();
 
 if (!$f || $f['user_id'] !== $userId) {
     die('Kein Zugriff.');
