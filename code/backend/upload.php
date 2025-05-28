@@ -1,37 +1,66 @@
 <?php
+header('Content-Type: application/json');
 session_start();
 require __DIR__ . '/db.php';
 
 $userId = $_SESSION['user_id'] ?? null;
 if (!$userId) {
-    die('Bitte einloggen.');
+    http_response_code(401);
+    echo json_encode(['error' => 'Unauthorized']);
+    exit;
 }
 
-$stmt = $pdo->prepare("SELECT id, name FROM folders WHERE user_id = ?");
-$stmt->execute([$userId]);
-$folders = $stmt->fetchAll();
-?>
-<!DOCTYPE html>
-<html lang="de">
-<head><meta charset="UTF-8"><title>Upload</title></head>
-<body>
-  <h1>Datei hochladen</h1>
-  <?php if (isset($_GET['success'])): ?>
-    <p style="color:green;">Upload erfolgreich!</p>
-  <?php endif; ?>
-  <form action="handle_upload.php" method="post" enctype="multipart/form-data">
-    <label for="file">Datei:</label><input type="file" name="file" id="file" required><br>
-    <label for="subject">Subject:</label><input type="text" name="subject" id="subject"><br>
-    <label for="description">Beschreibung:</label><textarea name="description" id="description"></textarea><br>
-    <label for="folder">Ordner:</label><select name="folder_id" id="folder">
-      <option value="">-- Root --</option>
-      <?php foreach ($folders as $f): ?>
-        <option value="<?php echo $f['id']; ?>"><?php echo htmlspecialchars($f['name']); ?></option>
-      <?php endforeach; ?>
-    </select><br>
-    <label>Sichtbar für alle?<input type="radio" name="is_public" value="1"></label>
-    <label>Nur privat<input type="radio" name="is_public" value="0" checked></label><br>
-    <button type="submit">Hochladen</button>
-  </form>
-</body>
-</html>
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    http_response_code(405);
+    echo json_encode(['error' => 'Method Not Allowed']);
+    exit;
+}
+
+if (!isset($_FILES['file']) || $_FILES['file']['error'] !== UPLOAD_ERR_OK) {
+    http_response_code(400);
+    echo json_encode(['error' => 'Invalid upload']);
+    exit;
+}
+
+$allowed = ['docx','pdf','pptx','zip','png','jpg','mp4','mp3'];
+$tmp     = $_FILES['file']['tmp_name'];
+$name    = basename($_FILES['file']['name']);
+$ext     = strtolower(pathinfo($name, PATHINFO_EXTENSION));
+
+if (!in_array($ext, $allowed, true)) {
+    http_response_code(415);
+    echo json_encode(['error' => 'Unsupported Media Type']);
+    exit;
+}
+
+$storageDir = __DIR__ . '/uploads/' . $userId;
+if (!is_dir($storageDir)) mkdir($storageDir, 0755, true);
+
+$destName = time() . '_' . preg_replace('/[^a-zA-Z0-9._-]/', '_', $name);
+$destPath = $storageDir . '/' . $destName;
+
+if (!move_uploaded_file($tmp, $destPath)) {
+    http_response_code(500);
+    echo json_encode(['error' => 'Failed to save file']);
+    exit;
+}
+
+$subject     = $_POST['subject']     ?? null;
+$description = $_POST['description'] ?? null;
+$isPublic    = isset($_POST['is_public']) ? (int)$_POST['is_public'] : 0;
+$folderId    = $_POST['folder_id']   ?: null;
+
+$sql = 'INSERT INTO files (user_id, folder_id, filename, file_type, subject, description, is_public)
+        VALUES (:uid, :fid, :fname, :ftype, :subject, :desc, :pub)';
+$stmt = $pdo->prepare($sql);
+$stmt->execute([
+    ':uid'     => $userId,
+    ':fid'     => $folderId,
+    ':fname'   => $destName,
+    ':ftype'   => $ext,
+    ':subject' => $subject,
+    ':desc'    => $description,
+    ':pub'     => $isPublic,
+]);
+
+echo json_encode(['success' => true, 'file_id' => $pdo->lastInsertId()]);
