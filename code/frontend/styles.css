@@ -187,3 +187,124 @@ body {
 .user-dropdown.active .dropdown-menu {
   display: block;
 }
+
+/* ========================================================
+   Intro-Section (zwei Spalten: Text links, Formular rechts)
+   ======================================================== */
+.intro-section {
+  margin-top: 60px; /* damit es unter der Navbar beginnt */
+  background-color: #f5f5f5;
+  padding: 60px 20px;
+}
+
+.intro-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+}
+
+/* Linke Hälfte: Titel & Text */
+.intro-left {
+  flex: 1 1 400px;
+  min-width: 280px;
+}
+
+.intro-title {
+  font-size: 3rem;
+  font-weight: bold;
+  color: #000;
+  line-height: 1.1;
+  margin-bottom: 20px;
+}
+
+.intro-title .highlight {
+  color: #169C9A;
+}
+
+.sub-title {
+  font-size: 2rem;
+  display: block;
+  margin-top: 10px;
+  color: #000;
+}
+
+/* Einführungstext */
+.intro-text {
+  font-size: 1rem;
+  line-height: 1.6;
+  color: #333;
+  max-width: 600px;
+  margin-top: 20px;
+}
+
+/* Rechte Hälfte: Registrierformular */
+.intro-right {
+  flex: 1 1 320px;
+  min-width: 280px;
+  background-color: #ffffff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  padding: 30px 20px;
+}
+
+.register-form h2 {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #169C9A;
+  text-align: center;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.95rem;
+  margin-bottom: 5px;
+  color: #333;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px 12px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  transition: border-color 0.2s ease;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #169C9A;
+}
+
+.btn-primary {
+  display: block;
+  width: 100%;
+  padding: 12px;
+  margin-top: 10px;
+  font-size: 1rem;
+  background-color: #169C9A;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.btn-primary:hover {
+  background-color: #127a74;
+}
+
+/* Responsive: Bei kleinen Bildschirmen sollen die beiden Spalten untereinander stehen */
+@media (max-width: 800px) {
+  .intro-container {
+    flex-direction: column;
+  }
+  .intro-right {
+    margin-top: 40px;
+  }
+}
