@@ -18,7 +18,6 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 
-// app.js
 
 document.addEventListener('DOMContentLoaded', () => {
   const subjectsDropdown = document.querySelector('.subjects-dropdown');
@@ -74,4 +73,5 @@ document.addEventListener('DOMContentLoaded', () => {
     }, 150);
   });
 });
+
 
