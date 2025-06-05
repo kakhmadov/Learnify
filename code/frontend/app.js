@@ -75,3 +75,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 
+function toggleFAQ(button) {
+    const answer = button.nextElementSibling;
+    const icon = button.querySelector('svg');
+    answer.classList.toggle('hidden');
+    icon.classList.toggle('rotate-180');
+  }

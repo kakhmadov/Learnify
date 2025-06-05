@@ -1,303 +1,535 @@
 <!DOCTYPE html>
 <html lang="de">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Learnify | Startseite</title>
-  <link rel="stylesheet" href="styles.css" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Learnify | Startseite</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
     <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body>
+    <!-- ========================================================
+   Navbar-Section
+   ======================================================== -->
+    <header class="navbar">
+      <div class="navbar-container">
+        <!-- Logo -->
+        <a href="index.html" class="navbar-logo">
+          <img src="learnify_logo.png" alt="Learnify Logo" />
+        </a>
 
+        <!-- Navigationslinks -->
+        <nav class="navbar-links">
+          <a href="index.html">Dashboard</a>
+          <a href="library.html">Library</a>
 
-</head>
-<body>
-  <!-- NAVBAR -->
-  <!-- NAVBAR -->
-<header class="navbar">
-  <div class="navbar-container">
-    <!-- Logo -->
-    <a href="index.html" class="navbar-logo">
-      <img src="learnify_logo.png" alt="Learnify Logo" />
-    </a>
-
-    <!-- Navigationslinks -->
-    <nav class="navbar-links">
-      <a href="index.html">Dashboard</a>
-      <a href="library.html">Library</a>
-
-      <!-- Subjects mit Mega-Dropdown -->
-      <div class="dropdown subjects-dropdown">
-        <a href="#" class="dropdown-toggle">Subjects</a>
-        <div class="mega-menu">
-          <div class="mega-column">
-            <h3>Regular</h3>
-            <ul>
-              <li><a href="#">Math</a></li>
-              <li><a href="#">English</a></li>
-              <li><a href="#">History</a></li>
-              <li><a href="#">Sport</a></li>
-            </ul>
+          <!-- Subjects mit Mega-Dropdown -->
+          <div class="dropdown subjects-dropdown">
+            <a href="#" class="dropdown-toggle">Subjects</a>
+            <div class="mega-menu">
+              <div class="mega-column">
+                <h3>Regular</h3>
+                <ul>
+                  <li><a href="#">Math</a></li>
+                  <li><a href="#">English</a></li>
+                  <li><a href="#">History</a></li>
+                  <li><a href="#">Sport</a></li>
+                </ul>
+              </div>
+              <div class="mega-column">
+                <h3>Technology</h3>
+                <ul>
+                  <li><a href="#">AI</a></li>
+                  <li><a href="#">Web Design</a></li>
+                  <li><a href="#">Computer Science</a></li>
+                  <li><a href="#">Software Dev</a></li>
+                </ul>
+              </div>
+              <div class="mega-column">
+                <h3>Languages</h3>
+                <ul>
+                  <li><a href="#">German</a></li>
+                  <li><a href="#">Japanese</a></li>
+                  <li><a href="#">French</a></li>
+                  <li><a href="#">Russian</a></li>
+                </ul>
+              </div>
+            </div>
           </div>
-          <div class="mega-column">
-            <h3>Technology</h3>
-            <ul>
-              <li><a href="#">AI</a></li>
-              <li><a href="#">Web Design</a></li>
-              <li><a href="#">Computer Science</a></li>
-              <li><a href="#">Software Dev</a></li>
-            </ul>
+        </nav>
+
+        <!-- User-Icon mit kleinem Dropdown -->
+        <div class="dropdown user-dropdown">
+          <button class="dropdown-toggle">
+            <!-- Dein User-Icon hier (SVG oder Bild) -->
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="24"
+              height="24"
+              fill="grey"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2.4c-3.2 0-9.5 1.6-9.5 4.8v2.4h19v-2.4c0-3.2-6.3-4.8-9.5-4.8z"
+              />
+            </svg>
+          </button>
+          <div class="dropdown-menu">
+            <a href="profile.html">Profile</a>
+            <a href="library.html">Library</a>
+            <a href="settings.html">Settings</a>
+            <a href="support.html">Support</a>
+            <hr />
+            <button class="logout-button">Logout</button>
           </div>
-          <div class="mega-column">
-            <h3>Languages</h3>
-            <ul>
-              <li><a href="#">German</a></li>
-              <li><a href="#">Japanese</a></li>
-              <li><a href="#">French</a></li>
-              <li><a href="#">Russian</a></li>
-            </ul>
+        </div>
+      </div>
+    </header>
+
+    <!-- ========================================================
+    Intro-Section
+    ======================================================== -->
+    <main class="intro-section">
+      <div class="intro-container">
+        <!-- Linke Hälfte: Titel & Einführungstext -->
+        <div class="intro-left">
+          <h1 class="intro-title">
+            Learni<span class="highlight">[fy]</span>ing<br />
+            <span class="sub-title">made easy!</span>
+          </h1>
+          <p class="intro-text">
+            Welcome to Learnify – your central platform for efficient and
+            organized learning. Discover everything you need to save, organize,
+            and share knowledge. Access learning materials, create your own
+            lists, and connect with the community – all in one place.<br /><br />
+            Quickly create a new account and change the way you manage learning
+            materials!
+          </p>
+        </div>
+
+        <!-- Rechte Hälfte: Registrierformular -->
+        <div class="intro-right">
+          <form class="register-form" method="post" action="register.php">
+            <h2>Register</h2>
+            <div class="form-group">
+              <label for="firstName">First name</label>
+              <input type="text" id="firstName" name="first_name" required />
+            </div>
+            <div class="form-group">
+              <label for="lastName">Last name</label>
+              <input type="text" id="lastName" name="last_name" required />
+            </div>
+            <div class="form-group">
+              <label for="email">Email</label>
+              <input type="email" id="email" name="email" required />
+            </div>
+            <div class="form-group">
+              <label for="password">Password</label>
+              <input type="password" id="password" name="password" required />
+            </div>
+            <button type="submit" class="btn btn-primary">Register</button>
+          </form>
+        </div>
+      </div>
+    </main>
+
+    <!-- ========================================================
+   Features-Section
+   ======================================================== -->
+    <section class="features-section">
+      <div class="features-container">
+        <!-- Feature 1: Lupe -->
+        <div class="feature-item">
+          <div class="feature-icon">
+            <i class="fas fa-search"></i>
+          </div>
+          <p class="feature-text">
+            Find what you need in seconds with smart filters and instant
+            results.
+          </p>
+        </div>
+
+        <!-- Feature 2: Buch -->
+        <div class="feature-item">
+          <div class="feature-icon">
+            <i class="fas fa-book"></i>
+          </div>
+          <p class="feature-text">
+            Save all your materials in one place and access them anytime.
+          </p>
+        </div>
+
+        <!-- Feature 3: Sprechblasen -->
+        <div class="feature-item">
+          <div class="feature-icon">
+            <i class="fas fa-comments"></i>
+          </div>
+          <p class="feature-text">
+            Ask questions and discuss directly under each resource.
+          </p>
+        </div>
+
+        <!-- Feature 4: Liste -->
+        <div class="feature-item">
+          <div class="feature-icon">
+            <i class="fas fa-list-alt"></i>
+          </div>
+          <p class="feature-text">
+            Create, name and organize your own study lists in a click.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+   How-it-works-Section
+   ======================================================== -->
+    <section class="how-it-works">
+      <h2>How it works</h2>
+      <div class="steps">
+        <div class="step">
+          <div class="icon">
+            <i class="fas fa-user-plus"></i>
+          </div>
+          <h3>1. Simply create an account</h3>
+        </div>
+        <div class="arrow"><i class="fas fa-arrow-right"></i></div>
+        <div class="step">
+          <div class="icon">
+            <i class="fas fa-folder-open"></i>
+          </div>
+          <h3>2. Save all your learning materials</h3>
+        </div>
+        <div class="arrow"><i class="fas fa-arrow-right"></i></div>
+        <div class="step">
+          <div class="icon">
+            <i class="fas fa-share-alt"></i>
+          </div>
+          <h3>3. Organise, share and get to learning!</h3>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+   Advantages-Section
+   ======================================================== -->
+    <section class="advantages">
+      <h2>Advantages</h2>
+      <div class="advantage-grid">
+        <div class="advantage-item">
+          <i class="fas fa-coins" style="color: gold"></i>
+          <p>100% free</p>
+        </div>
+        <div class="advantage-item">
+          <i class="fas fa-ban" style="color: red"></i>
+          <p>No ads</p>
+        </div>
+        <div class="advantage-item">
+          <i class="fas fa-laptop" style="color: #000000"
+            ><i class="fas fa-mobile" style="color: #5c5c5c"></i
+          ></i>
+          <p>Available on Desktop and Mobile</p>
+        </div>
+        <div class="advantage-item">
+          <i class="fas fa-check-circle" style="color: hsl(126, 100%, 81%)"></i>
+          <p>Easy to use</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================
+   Testimonial-Section
+   ======================================================== -->
+    <section
+      class="relative w-full py-20 bg-gradient-to-b from-[#e0f7fa] to-[#f5f5f5] overflow-hidden"
+    >
+      <h2
+        class="text-4xl md:text-5xl font-extrabold text-center text-[#169C9A] mb-16"
+      >
+        What our customers say
+      </h2>
+
+      <!-- Carousel Wrapper -->
+      <div class="relative overflow-hidden">
+        <div
+          class="flex gap-8 w-max animate-marquee hover:[animation-play-state:paused]"
+        >
+          <!-- Gruppe 1 + 2 (zusammengefügt für Endlosschleife) -->
+          <div class="flex gap-8">
+            <!-- Wiederhole deine Karten wie gehabt -->
+            <!-- Beispiel-Karte -->
+            <div class="testimonial-card">
+              <img src="https://i.pravatar.cc/100?img=8" class="avatar" />
+              <p>
+                „Thanks to Learnify, I save 30 minutes a day searching for
+                learning materials. Everything is right at my fingertips.“
+              </p>
+              <div class="name">Jake Norwood</div>
+              <div class="info">22, Science Student</div>
+            </div>
+            <div class="testimonial-card">
+              <img src="https://i.pravatar.cc/100?img=7" class="avatar" />
+              <p>
+                „A great platform tailored to students. Super easy to use and
+                incredibly helpful.“
+              </p>
+              <div class="name">Jonas Müller</div>
+              <div class="info">21, Economics Student</div>
+            </div>
+            <div class="testimonial-card">
+              <img src="https://i.pravatar.cc/100?img=9" class="avatar" />
+              <p>
+                „The comment feature helps me get my questions answered
+                instantly. No more endless searching for answers.“
+              </p>
+              <div class="name">Mia Gruber</div>
+              <div class="info">22, Architecture Student</div>
+            </div>
+            <div class="testimonial-card">
+              <img src="https://i.pravatar.cc/100?img=4" class="avatar" />
+              <p>
+                „In SEW, I write code that doesn't work. At least with Learnify,
+                I quickly find out why.“
+              </p>
+              <div class="name">Lukas Steiner</div>
+              <div class="info">16, CS Student</div>
+            </div>
+            <div class="testimonial-card">
+              <img src="https://i.pravatar.cc/100?img=10" class="avatar" />
+              <p>
+                „I love that I can create separate lists for each subject –
+                math, English, history – all neatly organized!“
+              </p>
+              <div class="name">Anna Meier</div>
+              <div class="info">23, Law Student</div>
+            </div>
+          </div>
+
+          <!-- Cards-Gruppe 2 (Duplikat für Endlosschleife) -->
+          <div class="flex gap-8">
+            <div class="testimonial-card">
+              <img src="https://i.pravatar.cc/100?img=8" class="avatar" />
+              <p>
+                „Thanks to Learnify, I save 30 minutes a day searching for
+                learning materials. Everything is right at my fingertips.“
+              </p>
+              <div class="name">Jake Norwood</div>
+              <div class="info">22, Science Student</div>
+            </div>
+            <div class="testimonial-card">
+              <img src="https://i.pravatar.cc/100?img=7" class="avatar" />
+              <p>
+                „A great platform tailored to students. Super easy to use and
+                incredibly helpful.“
+              </p>
+              <div class="name">Jonas Müller</div>
+              <div class="info">21, Economics Student</div>
+            </div>
+            <div class="testimonial-card">
+              <img src="https://i.pravatar.cc/100?img=9" class="avatar" />
+              <p>
+                „The comment feature helps me get my questions answered
+                instantly. No more endless searching for answers.“
+              </p>
+              <div class="name">Mia Gruber</div>
+              <div class="info">22, Architecture Student</div>
+            </div>
+            <div class="testimonial-card">
+              <img src="https://i.pravatar.cc/100?img=4" class="avatar" />
+              <p>
+                „In SEW, I write code that doesn't work. At least with Learnify,
+                I quickly find out why.“
+              </p>
+              <div class="name">Lukas Steiner</div>
+              <div class="info">16, CS Student</div>
+            </div>
+            <div class="testimonial-card">
+              <img src="https://i.pravatar.cc/100?img=10" class="avatar" />
+              <p>
+                „I love that I can create separate lists for each subject –
+                math, English, history – all neatly organized!“
+              </p>
+              <div class="name">Anna Meier</div>
+              <div class="info">23, Law Student</div>
+            </div>
           </div>
         </div>
       </div>
-    </nav>
+    </section>
 
-    <!-- User-Icon mit kleinem Dropdown -->
-    <div class="dropdown user-dropdown">
-      <button class="dropdown-toggle">
-        <!-- Dein User-Icon hier (SVG oder Bild) -->
-        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="grey" viewBox="0 0 24 24">
-          <path d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2.4c-3.2 0-9.5 1.6-9.5 4.8v2.4h19v-2.4c0-3.2-6.3-4.8-9.5-4.8z"/>
-        </svg>
-      </button>
-      <div class="dropdown-menu">
-        <a href="profile.html">Profile</a>
-        <a href="library.html">Library</a>
-        <a href="settings.html">Settings</a>
-        <a href="support.html">Support</a>
-        <hr />
-        <button class="logout-button">Logout</button>
+    <!-- ========================================================
+   FAQ-Section
+   ======================================================== -->
+    <section class="w-full py-20 ">
+      <div class="max-w-4xl mx-auto px-4">
+        <h2 class="text-4xl font-bold text-center text-[#169C9A] mb-12">FAQ</h2>
+
+        <div class="space-y-4">
+          <!-- FAQ Item -->
+          <div class="border rounded-lg shadow-sm">
+            <button
+              class="w-full flex justify-between items-center p-4 text-left text-lg font-medium text-gray-900"
+              onclick="toggleFAQ(this)"
+            >
+              <span>Is Learnify really free?</span>
+              <svg
+                class="w-6 h-6 transform transition-transform duration-300"
+                fill="none"
+                stroke="#169C9A"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            <div class="faq-answer hidden px-4 pb-4 text-gray-600">
+              Yes! Learnify is 100% free with no hidden fees or premium plans.
+            </div>
+          </div>
+
+          <!-- FAQ Item -->
+          <div class="border rounded-lg shadow-sm">
+            <button
+              class="w-full flex justify-between items-center p-4 text-left text-lg font-medium text-gray-900"
+              onclick="toggleFAQ(this)"
+            >
+              <span>Can I use Learnify on my phone?</span>
+              <svg
+                class="w-6 h-6 transform transition-transform duration-300"
+                fill="none"
+                stroke="#169C9A"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            <div class="faq-answer hidden px-4 pb-4 text-gray-600">
+              Absolutely! Learnify works smoothly on both desktop and mobile
+              devices.
+            </div>
+          </div>
+
+          <!-- FAQ Item -->
+          <div class="border rounded-lg shadow-sm">
+            <button
+              class="w-full flex justify-between items-center p-4 text-left text-lg font-medium text-gray-900"
+              onclick="toggleFAQ(this)"
+            >
+              <span>Do I need to install anything?</span>
+              <svg
+                class="w-6 h-6 transform transition-transform duration-300"
+                fill="none"
+                stroke="#169C9A"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            <div class="faq-answer hidden px-4 pb-4 text-gray-600">
+              No installation required. Just sign up and start learning online.
+            </div>
+          </div>
+
+          <!-- FAQ Item -->
+          <div class="border rounded-lg shadow-sm">
+            <button
+              class="w-full flex justify-between items-center p-4 text-left text-lg font-medium text-gray-900"
+              onclick="toggleFAQ(this)"
+            >
+              <span>Is my data secure on Learnify?</span>
+              <svg
+                class="w-6 h-6 transform transition-transform duration-300"
+                fill="none"
+                stroke="#169C9A"
+                stroke-width="2"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  d="M19 9l-7 7-7-7"
+                />
+              </svg>
+            </button>
+            <div class="faq-answer hidden px-4 pb-4 text-gray-600">
+              Yes, we take data privacy seriously. Your information is encrypted
+              and never shared.
+            </div>
+          </div>
+        </div>
       </div>
+    </section>
+
+<footer class="bg-[#169C9A] text-white pt-10 pb-6 px-6 mt-12">
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center">
+    <!-- Logo (Bild) -->
+    <div class="mb-6 md:mb-0">
+      <img src="learnify_logo.png" alt="Learnify Logo" class="h-20">
+    </div>
+
+    <!-- Social Media Icons -->
+    <div class="flex gap-6">
+      <!-- Instagram -->
+      <a href="#" aria-label="Instagram" class="hover:text-red-400 transition">
+        <i class="fab fa-instagram text-4xl"></i>
+      </a>
+      <!-- GitHub -->
+      <a href="#" aria-label="GitHub" class="hover:text-black transition">
+        <i class="fab fa-github text-4xl"></i>
+      </a>
+      <!-- Facebook -->
+      <a href="#" aria-label="Facebook" class="hover:text-blue-500 transition">
+        <i class="fab fa-facebook text-4xl"></i>
+      </a>
+      <!-- X (Twitter) -->
+      <a href="#" aria-label="Twitter / X" class="hover:text-gray-300 transition">
+        <i class="fab fa-x-twitter text-4xl"></i>
+      </a>
+      <!-- LinkedIn -->
+      <a href="#" aria-label="LinkedIn" class="hover:text-blue-300 transition">
+        <i class="fab fa-linkedin text-4xl"></i>
+      </a>
     </div>
   </div>
-</header>
 
-<main class="intro-section">
-  <div class="intro-container">
-    <!-- Linke Hälfte: Titel & Einführungstext -->
-    <div class="intro-left">
-      <h1 class="intro-title">
-        Learni<span class="highlight">[fy]</span>ing<br />
-        <span class="sub-title">made easy!</span>
-      </h1>
-      <p class="intro-text">
-        Welcome to Learnify – your central platform for efficient and organized learning. Discover everything you need to
-        save, organize, and share knowledge. Access learning materials, create your own lists, and connect with the community – all in one
-        place.<br /><br />
-        Quickly create a new account and change the way you manage learning materials!
-      </p>
-    </div>
+  <!-- Divider -->
+  <div class="border-t border-white/30 my-6"></div>
 
-    <!-- Rechte Hälfte: Registrierformular -->
-    <div class="intro-right">
-      <form class="register-form" method="post" action="register.php">
-        <h2>Register</h2>
-        <div class="form-group">
-          <label for="firstName">First name</label>
-          <input type="text" id="firstName" name="first_name" required />
-        </div>
-        <div class="form-group">
-          <label for="lastName">Last name</label>
-          <input type="text" id="lastName" name="last_name" required />
-        </div>
-        <div class="form-group">
-          <label for="email">Email</label>
-          <input type="email" id="email" name="email" required />
-        </div>
-        <div class="form-group">
-          <label for="password">Password</label>
-          <input type="password" id="password" name="password" required />
-        </div>
-        <button type="submit" class="btn btn-primary">Register</button>
-      </form>
+  <!-- Rechtliche Links -->
+  <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center text-sm gap-2 md:gap-6 text-white/90">
+    <p>&copy; 2025 Learnify. All rights reserved.</p>
+    <div class="flex flex-wrap gap-4">
+      <a href="#" class="hover:underline">Imprint</a>
+      <a href="#" class="hover:underline">Data Privacy</a>
+      <a href="#" class="hover:underline">AGB</a>
+      <a href="#" class="hover:underline">Contact</a>
     </div>
   </div>
-</main>
-
-<!-- Features-Section -->
-<section class="features-section">
-  <div class="features-container">
-    <!-- Feature 1: Lupe -->
-    <div class="feature-item">
-      <div class="feature-icon">
-        <i class="fas fa-search"></i>
-      </div>
-      <p class="feature-text">
-        Find what you need in seconds with smart filters and instant results.
-      </p>
-    </div>
-
-    <!-- Feature 2: Buch -->
-    <div class="feature-item">
-      <div class="feature-icon">
-        <i class="fas fa-book"></i>
-      </div>
-      <p class="feature-text">
-        Save all your materials in one place and access them anytime.
-      </p>
-    </div>
-
-    <!-- Feature 3: Sprechblasen -->
-    <div class="feature-item">
-      <div class="feature-icon">
-        <i class="fas fa-comments"></i>
-      </div>
-      <p class="feature-text">
-        Ask questions and discuss directly under each resource.
-      </p>
-    </div>
-
-    <!-- Feature 4: Liste -->
-    <div class="feature-item">
-      <div class="feature-icon">
-        <i class="fas fa-list-alt"></i>
-      </div>
-      <p class="feature-text">
-        Create, name and organize your own study lists in a click.
-      </p>
-    </div>
-  </div>
-</section>
-
-<section class="how-it-works">
-  <h2>How it works</h2>
-  <div class="steps">
-    <div class="step">
-      <div class="icon">
-        <i class="fas fa-user-plus"></i>
-      </div>
-      <h3>1. Simply create an account</h3>
-    </div>
-    <div class="arrow"><i class="fas fa-arrow-right"></i></div>
-    <div class="step">
-      <div class="icon">
-        <i class="fas fa-folder-open"></i>
-      </div>
-      <h3>2. Save all your learning materials</h3>
-    </div>
-    <div class="arrow"><i class="fas fa-arrow-right"></i></div>
-    <div class="step">
-      <div class="icon">
-        <i class="fas fa-share-alt"></i>
-      </div>
-      <h3>3. Organise, share and get to learning!</h3>
-    </div>
-  </div>
-</section>
-
-<section class="advantages">
-  <h2>Advantages</h2>
-  <div class="advantage-grid">
-    <div class="advantage-item">
-      <i class="fas fa-coins" style="color: gold;"></i>
-      <p>100% free</p>
-    </div>
-    <div class="advantage-item">
-      <i class="fas fa-ban" style="color: red;"></i>
-      <p>No ads</p>
-    </div>
-    <div class="advantage-item">
-      <i class="fas fa-laptop" style="color: #000000;"><i class="fas fa-mobile" style="color: #5c5c5c;"></i></i>
-      <p>Available on Desktop and Mobile</p>
-    </div>
-    <div class="advantage-item">
-      <i class="fas fa-check-circle" style="color: hsl(126, 100%, 81%);"></i>
-      <p>Easy to use</p>
-    </div>
-  </div>
-</section>
-
-<section class="relative w-full py-20 bg-gradient-to-b from-[#e0f7fa] to-[#ffffff] overflow-hidden">
-  <h2 class="text-4xl md:text-5xl font-extrabold text-center text-[#169C9A] mb-16">
-    What our customers say
-  </h2>
-
-  <!-- Carousel Wrapper -->
-  <div class="relative overflow-hidden">
-    <div class="flex gap-8 w-max animate-marquee hover:[animation-play-state:paused]">
-      <!-- Gruppe 1 + 2 (zusammengefügt für Endlosschleife) -->
-      <div class="flex gap-8">
-        <!-- Wiederhole deine Karten wie gehabt --> 
-        <!-- Beispiel-Karte -->
-        <div class="testimonial-card">
-          <img src="https://i.pravatar.cc/100?img=8" class="avatar" />
-          <p>„Thanks to Learnify, I save 30 minutes a day searching for learning materials. Everything is right at my fingertips.“</p>
-          <div class="name">Jake Norwood</div>
-          <div class="info">22, Science Student</div>
-        </div>
-        <div class="testimonial-card">
-          <img src="https://i.pravatar.cc/100?img=7" class="avatar" />
-          <p>„A great platform tailored to students. Super easy to use and incredibly helpful.“</p>
-          <div class="name">Jonas Müller</div>
-          <div class="info">21, Economics Student</div>
-        </div>
-        <div class="testimonial-card">
-          <img src="https://i.pravatar.cc/100?img=9" class="avatar" />
-          <p>„The comment feature helps me get my questions answered instantly. No more endless searching for answers.“</p>
-          <div class="name">Mia Gruber</div>
-          <div class="info">22, Architecture Student</div>
-        </div>
-        <div class="testimonial-card">
-          <img src="https://i.pravatar.cc/100?img=4" class="avatar" />
-          <p>„In SEW, I write code that doesn't work. At least with Learnify, I quickly find out why.“</p>
-          <div class="name">Lukas Steiner</div>
-          <div class="info">16, CS Student</div>
-        </div>
-        <div class="testimonial-card">
-          <img src="https://i.pravatar.cc/100?img=10" class="avatar" />
-          <p>„I love that I can create separate lists for each subject – math, English, history – all neatly organized!“</p>
-          <div class="name">Anna Meier</div>
-          <div class="info">23, Law Student</div>
-        </div>
-      </div>
-
-      <!-- Cards-Gruppe 2 (Duplikat für Endlosschleife) -->
-      <div class="flex gap-8">
-        <div class="testimonial-card">
-          <img src="https://i.pravatar.cc/100?img=8" class="avatar" />
-          <p>„Thanks to Learnify, I save 30 minutes a day searching for learning materials. Everything is right at my fingertips.“</p>
-          <div class="name">Jake Norwood</div>
-          <div class="info">22, Science Student</div>
-        </div>
-        <div class="testimonial-card">
-          <img src="https://i.pravatar.cc/100?img=7" class="avatar" />
-          <p>„A great platform tailored to students. Super easy to use and incredibly helpful.“</p>
-          <div class="name">Jonas Müller</div>
-          <div class="info">21, Economics Student</div>
-        </div>
-        <div class="testimonial-card">
-          <img src="https://i.pravatar.cc/100?img=9" class="avatar" />
-          <p>„The comment feature helps me get my questions answered instantly. No more endless searching for answers.“</p>
-          <div class="name">Mia Gruber</div>
-          <div class="info">22, Architecture Student</div>
-        </div>
-        <div class="testimonial-card">
-          <img src="https://i.pravatar.cc/100?img=4" class="avatar" />
-          <p>„In SEW, I write code that doesn't work. At least with Learnify, I quickly find out why.“</p>
-          <div class="name">Lukas Steiner</div>
-          <div class="info">16, CS Student</div>
-        </div>
-        <div class="testimonial-card">
-          <img src="https://i.pravatar.cc/100?img=10" class="avatar" />
-          <p>„I love that I can create separate lists for each subject – math, English, history – all neatly organized!“</p>
-          <div class="name">Anna Meier</div>
-          <div class="info">23, Law Student</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+</footer>
 
 
-  <script src="app.js"></script>
-</body>
+    <script src="app.js"></script>
+  </body>
 </html>
