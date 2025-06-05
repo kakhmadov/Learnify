@@ -308,3 +308,56 @@ body {
     margin-top: 40px;
   }
 }
+
+/* ========================================================
+   Features-Section (Hintergrund #169C9A, weiße Icons/Texte)
+   ======================================================== */
+.features-section {
+  background-color: #169C9A; /* Theme-Farbe */
+  padding: 60px 20px;
+  margin-top: 40px;
+}
+
+.features-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center; /* zentriert die Items */
+}
+
+/* Jedes Item in einer Zeile: Icon + Text */
+.feature-item {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  max-width: 800px;
+}
+
+/* Font-Awesome-Icons in Weiß und größer */
+.feature-icon i {
+  font-size: 30px;
+  color: #ffffff;
+  flex-shrink: 0;
+}
+
+/* Text linksbündig, weiß und größer */
+.feature-text {
+  color: #ffffff;
+  font-size: 1.25rem;
+  line-height: 1.5;
+  margin: 0;
+  text-align: left;
+}
+
+/* Responsive: Icons und Text anpassen */
+@media (max-width: 600px) {
+  .feature-icon i {
+    font-size: 40px;
+  }
+  .feature-text {
+    font-size: 1.4rem;
+  }
+}
+
