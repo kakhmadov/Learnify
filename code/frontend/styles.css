@@ -361,3 +361,51 @@ body {
   }
 }
 
+/* ========================================================
+   How-it-works-Section (Hintergrund weiß)
+   ======================================================== */
+.how-it-works {
+  padding: 4rem 2rem;
+  margin-top: 30px;
+  text-align: center;
+}
+
+.how-it-works h2 {
+  font-size: 2.5rem;
+  margin-bottom: 3rem;
+  font-weight: bold;
+  color: #000;
+}
+
+.steps {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.step {
+  flex: 0 1 250px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.step .icon {
+  font-size: 3rem;
+  color: #169C9A;
+  margin-bottom: 1rem;
+}
+
+.step h3 {
+  font-size: 1.2rem;
+  color: #333;
+  max-width: 220px;
+}
+
+.arrow {
+  font-size: 2rem;
+  color: #999;
+}
