@@ -20,8 +20,7 @@ body.login-page {
 }
 
 .login-container .logo img {
-  height: 50px;
-  margin-bottom: 20px;
+  height: 90px;
 }
 
 .login-container h2 {
@@ -89,4 +88,23 @@ body.login-page {
 
 .bottom-text a:hover {
   text-decoration: underline;
+}
+
+.name-fields {
+  display: flex;
+  flex-direction: row;
+  gap: 20px;
+  flex-wrap: wrap; /* wichtig für Mobilgeräte */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.form-group label {
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #333;
 }
