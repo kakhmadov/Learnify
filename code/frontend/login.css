@@ -1,0 +1,92 @@
+/* === Login Page Styles === */
+body.login-page {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background: linear-gradient(to right, #169C9A, #ffffff);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.login-container {
+  background-color: white;
+  padding: 40px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.login-container .logo img {
+  height: 50px;
+  margin-bottom: 20px;
+}
+
+.login-container h2 {
+  margin-bottom: 10px;
+  color: #169C9A;
+}
+
+.login-container p {
+  color: #555;
+  font-size: 0.95rem;
+  margin-bottom: 30px;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  text-align: left;
+}
+
+.login-form label {
+  font-weight: 500;
+  color: #333;
+}
+
+.login-form input {
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  font-size: 1rem;
+  transition: border-color 0.2s ease;
+}
+
+.login-form input:focus {
+  outline: none;
+  border-color: #169C9A;
+}
+
+.login-form button {
+  margin-top: 10px;
+  padding: 12px;
+  background-color: #169C9A;
+  color: white;
+  font-weight: bold;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.login-form button:hover {
+  background-color: #117b7a;
+}
+
+.bottom-text {
+  margin-top: 20px;
+  font-size: 0.9rem;
+}
+
+.bottom-text a {
+  color: #169C9A;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.bottom-text a:hover {
+  text-decoration: underline;
+}
