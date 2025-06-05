@@ -81,3 +81,5 @@ function toggleFAQ(button) {
     answer.classList.toggle('hidden');
     icon.classList.toggle('rotate-180');
   }
+
+  
