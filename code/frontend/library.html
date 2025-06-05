@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Learnify Library</title>
+    <link rel="stylesheet" href="library.css" />
+  </head>
+  <body>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="navbar-left">
+        <a href="index.html" class="logo">Learnify</a>
+      </div>
+      <div class="navbar-right">
+        <a href="library.html">Library</a>
+        <a href="login.html">Login</a>
+        <a href="register.html">Register</a>
+      </div>
+    </nav>
+
+    <div class="page-content">
+      <div class="library-container">
+        <div class="library-container">
+          <!-- Sidebar -->
+          <aside class="sidebar">
+            <h2>Folders</h2>
+            <ul class="folder-list">
+              <li class="folder active">Uploaded</li>
+              <li class="folder">Bookmarked</li>
+            </ul>
+            <button id="new-folder-btn">+ New Folder</button>
+          </aside>
+
+          <!-- Main Content -->
+          <main class="main-content">
+            <div class="top-bar">
+              <input
+                type="text"
+                id="search-input"
+                placeholder="Search files..."
+              />
+              <div class="button-group">
+                <button id="filter-btn">Filter</button>
+                <button id="upload-btn">Upload</button>
+              </div>
+            </div>
+
+            <div class="file-grid" id="file-grid">
+              <!-- Dateien werden hier angezeigt -->
+              <p class="placeholder">No files in this folder yet.</p>
+            </div>
+          </main>
+        </div>
+
+        <!-- Upload Modal -->
+        <div class="modal hidden" id="upload-modal">
+          <div class="modal-content">
+            <span class="close-btn" id="close-modal">&times;</span>
+            <h2>Upload File</h2>
+            <div class="upload-area" id="upload-area">
+              <p>Drag & Drop file here or click to select</p>
+              <input type="file" id="file-input" hidden />
+            </div>
+            <label for="visibility">Visibility:</label>
+            <select id="visibility">
+              <option value="private">Private</option>
+              <option value="public">Public</option>
+            </select>
+
+            <label for="subject">Subject:</label>
+            <select id="subject">
+              <option>Math</option>
+              <option>AI</option>
+              <option>Web Design</option>
+              <option>Japanese</option>
+              <option>English</option>
+              <option>Computer Science</option>
+            </select>
+
+            <label for="folder-select">Save to Folder:</label>
+            <select id="folder-select">
+              <option>Uploaded</option>
+              <option>Bookmarked</option>
+            </select>
+
+            <label for="description">Description:</label>
+            <textarea
+              id="description"
+              rows="3"
+              placeholder="Optional..."
+            ></textarea>
+
+            <button id="confirm-upload">Upload</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="/code/backend/library.js"></script>
+  </body>
+</html>
