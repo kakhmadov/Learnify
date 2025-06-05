@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Learnify | Startseite</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- NAVBAR -->
+  <!-- NAVBAR -->
+<header class="navbar">
+  <div class="navbar-container">
+    <!-- Logo -->
+    <a href="index.html" class="navbar-logo">
+      <img src="learnify_logo.png" alt="Learnify Logo" />
+    </a>
+
+    <!-- Navigationslinks -->
+    <nav class="navbar-links">
+      <a href="index.html">Dashboard</a>
+      <a href="library.html">Library</a>
+
+      <!-- Subjects mit Mega-Dropdown -->
+      <div class="dropdown subjects-dropdown">
+        <a href="#" class="dropdown-toggle">Subjects</a>
+        <div class="mega-menu">
+          <div class="mega-column">
+            <h3>Regular</h3>
+            <ul>
+              <li><a href="#">Math</a></li>
+              <li><a href="#">English</a></li>
+              <li><a href="#">History</a></li>
+              <li><a href="#">Sport</a></li>
+            </ul>
+          </div>
+          <div class="mega-column">
+            <h3>Technology</h3>
+            <ul>
+              <li><a href="#">AI</a></li>
+              <li><a href="#">Web Design</a></li>
+              <li><a href="#">Computer Science</a></li>
+              <li><a href="#">Software Dev</a></li>
+            </ul>
+          </div>
+          <div class="mega-column">
+            <h3>Languages</h3>
+            <ul>
+              <li><a href="#">German</a></li>
+              <li><a href="#">Japanese</a></li>
+              <li><a href="#">French</a></li>
+              <li><a href="#">Russian</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- User-Icon mit kleinem Dropdown -->
+    <div class="dropdown user-dropdown">
+      <button class="dropdown-toggle">
+        <!-- Dein User-Icon hier (SVG oder Bild) -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="grey" viewBox="0 0 24 24">
+          <path d="M12 12c2.7 0 4.9-2.2 4.9-4.9S14.7 2.2 12 2.2 7.1 4.4 7.1 7.1 9.3 12 12 12zm0 2.4c-3.2 0-9.5 1.6-9.5 4.8v2.4h19v-2.4c0-3.2-6.3-4.8-9.5-4.8z"/>
+        </svg>
+      </button>
+      <div class="dropdown-menu">
+        <a href="profile.html">Profile</a>
+        <a href="library.html">Library</a>
+        <a href="settings.html">Settings</a>
+        <a href="support.html">Support</a>
+        <hr />
+        <button class="logout-button">Logout</button>
+      </div>
+    </div>
+  </div>
+</header>
+
+
+  <!-- Hier kommt später der restliche Seiteninhalt -->
+  <main>
+    <!-- ... -->
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
